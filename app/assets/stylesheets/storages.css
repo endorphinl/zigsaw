@@ -1,3 +1,6 @@
+p {
+    margin: 0;
+}
 .terminal {
     padding-top: 10px;
     padding-bottom: 10px;
@@ -16,4 +19,84 @@
 }
 .upload_type {
     color: #b5bd68;
+}
+.revoked {
+    position: relative;
+}
+.revoked:after {
+    content: " ";
+    z-index: 10;
+    display: block;
+    position: absolute;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0.5);
+}
+.border_blink {
+    -webkit-animation: bordercolor-change 2s;
+    -moz-animation: bordercolor-change 2s;
+    -o-animation: bordercolor-change 2s;
+    -ms-animation: bordercolor-change 2s;
+    animation: bordercolor-change 2s;
+}
+@-webkit-keyframes bordercolor-change {
+    0% { border: solid 2px #c5c8c6; }
+    50% { border: solid 2px red; }
+    100% { border: solid 2px #c5c8c6; }
+}
+@-moz-keyframes bordercolor-change {
+    0% { border: solid 2px #c5c8c6; }
+    50% { border: solid 2px red; }
+    100% { border: solid 2px #c5c8c6; }
+}
+@-ms-keyframes bordercolor-change {
+    0% { border: solid 2px #c5c8c6; }
+    50% { border: solid 2px red; }
+    100% { border: solid 2px #c5c8c6; }
+}
+@-o-keyframes bordercolor-change {
+    0% { border: solid 2px #c5c8c6; }
+    50% { border: solid 2px red; }
+    100% { border: solid 2px #c5c8c6; }
+}
+@keyframes bordercolor-change {
+    0% { border: solid 2px #c5c8c6; }
+    50% { border: solid 2px red; }
+    100% { border: solid 2px #c5c8c6; }
+}
+
+.log {
+    -webkit-animation: color-change 2s;
+    -moz-animation: color-change 2s;
+    -o-animation: color-change 2s;
+    -ms-animation: color-change 2s;
+    animation: color-change 2s;
+}
+
+@-webkit-keyframes color-change {
+    0% { color: #c5c8c6; }
+    50% { color: red; }
+    100% { color: #c5c8c6; }
+}
+@-moz-keyframes color-change {
+    0% { color: #c5c8c6; }
+    50% { color: red; }
+    100% { color: #c5c8c6; }
+}
+@-ms-keyframes color-change {
+    0% { color: #c5c8c6; }
+    50% { color: red; }
+    100% { color: #c5c8c6; }
+}
+@-o-keyframes color-change {
+    0% { color: #c5c8c6; }
+    50% { color: red; }
+    100% { color: #c5c8c6; }
+}
+@keyframes color-change {
+    0% { color: #c5c8c6; }
+    50% { color: red; }
+    100% { color: #c5c8c6; }
 }
