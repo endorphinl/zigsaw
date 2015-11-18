@@ -1,14 +1,16 @@
 {
     "logs" : [
     <% @log_array.each_with_index do |line, index| %>
-        <% log_elements = line.split("_") %>
-        {
-            "action_type": "<%= log_elements[0] %>",
-            "file_name": "<%= log_elements[1] unless log_elements[0] == 'donate' %>",
-            "chunk": "<%= log_elements[2] unless log_elements[0] == 'donate' %>",
-            "account": "<%= log_elements[3] %>",
-            "upload_type": "<%= log_elements[4] unless log_elements[0] == 'donate' %>"
-        }<% if index != @log_array.size - 1 %>,<% end %>
+        <% if !line.nil? %>
+            <% log_elements = line.split("_") %>
+            {
+                "action_type": "<%= log_elements[0] %>",
+                "file_name": "<%= log_elements[1] unless log_elements[0] == 'donate' %>",
+                "chunk": "<%= log_elements[2] unless log_elements[0] == 'donate' %>",
+                "account": "<%= log_elements[0] == 'donate' ? log_elements[1] : log_elements[3] %>",
+                "upload_type": "<%= log_elements[4] unless log_elements[0] == 'donate' %>"
+            }<% if index != @log_array.size - 1 %>,<% end %>
+        <% end %>
     <% end %>
     ]
 }

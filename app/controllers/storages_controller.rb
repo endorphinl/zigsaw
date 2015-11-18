@@ -1,10 +1,15 @@
 class StoragesController < ApplicationController
     require 'net/http'
     def access_logs
-        log_index = params[:log_index] ? params[:log_index] : 0
+        log_index = cookies[:log_index] ? cookies[:log_index] : 0
         log = request_logs log_index
 
-        @log_array = log.split("\n")
+        @log_array = log.gsub("\n", ' ').split
+
+        # get next index then remove last element from array
+        next_access_index = @log_array[@log_array.length - 1]
+        cookies[:log_index] = { value: next_access_index, expires: 2.hour.from_now }
+        @log_array.delete_at(@log_array.length - 1)
         
         respond_to do |format|
             format.json
@@ -12,12 +17,15 @@ class StoragesController < ApplicationController
         end
     end
     def index
+        cookies[:log_index] = { value: 0, expires: 2.hour.from_now }
+=begin
         log_index = cookies[:log_index] ? cookies[:log_index] : 0
-        cookies[:log_index] = 0 unless log_index
+        cookies[:log_index] = { value: 0, expires: 2.hour.from_now } unless log_index != 0
         log = request_logs log_index
 
         @log = log
-        @log_array = log.split("\n")
+        @log_array = log.gsub("\n", ' ').split
+=end
     end
     def create
     end

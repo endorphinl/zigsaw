@@ -3,6 +3,10 @@
     padding-bottom: 10px;
     background-color: #1d1f21;
     color: #c5c8c6;
+    overflow: scroll;
+    height: 500px;
+    border: solid 2px #c5c8c6;
+    border-radius: 4px; 
 }
 .action_type {
     color: #de935f;

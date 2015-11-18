@@ -6,17 +6,17 @@
 </div>
 
 <script>
-        var jsonresult;
 /*
+        var jsonresult;
         $.ajax({
             url: "/storages/access_logs",
             dataType: "text",
             success: (function(data) {
                 jsonresult = data;
-                $("#test").html(data);
             })
         });
 */
+/*
         $.ajax({
             url: "/storages/access_logs",
             dataType: "json",
@@ -25,7 +25,7 @@
                 update_logs(jsonresult.logs);
             })
         });
-/*
+*/
     setInterval(function(){
         $.ajax({
             url: "/storages/access_logs",
@@ -36,5 +36,4 @@
             })
         });
     }, 2000);
-*/
 </script>
