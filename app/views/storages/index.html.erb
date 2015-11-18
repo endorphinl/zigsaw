@@ -1,0 +1,40 @@
+<%# @log_array[2] %>
+<%# render partial: "storage_log", collection: @storage_logs %>
+<div class="container">
+    <div class="row">
+    </div>
+</div>
+
+<script>
+        var jsonresult;
+/*
+        $.ajax({
+            url: "/storages/access_logs",
+            dataType: "text",
+            success: (function(data) {
+                jsonresult = data;
+                $("#test").html(data);
+            })
+        });
+*/
+        $.ajax({
+            url: "/storages/access_logs",
+            dataType: "json",
+            success: (function(data) {
+                jsonresult = data;
+                update_logs(jsonresult.logs);
+            })
+        });
+/*
+    setInterval(function(){
+        $.ajax({
+            url: "/storages/access_logs",
+            dataType: "json",
+            success: (function(data) {
+                jsonresult = data;
+                update_logs(jsonresult.logs);
+            })
+        });
+    }, 2000);
+*/
+</script>

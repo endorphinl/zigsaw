@@ -1,0 +1,15 @@
+.terminal {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: #1d1f21;
+    color: #c5c8c6;
+}
+.action_type {
+    color: #de935f;
+}
+.chunk {
+    color: #8abeb7;
+}
+.upload_type {
+    color: #b5bd68;
+}
