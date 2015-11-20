@@ -7,7 +7,7 @@ function update_logs(log_arr) {
         account_el = $("#" + log_arr[i].account);
         if(!account_el.length)
         {
-            $(".row").append("<div class='col-lg-2 col-md-4 terminal' id='" + log_arr[i].account + "'><h4>" + log_arr[i].account + "</h4></div>");
+            $(".row").append("<div class='col-lg-3 col-md-4 terminal' id='" + log_arr[i].account + "'><h4>" + log_arr[i].account + "</h4></div>");
             account_el = $("#" + log_arr[i].account);
         }
 
